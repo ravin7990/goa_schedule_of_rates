@@ -3,8 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Goa SOR Archive</title>
-    <meta name="description" content="Learn about the mission of Goa SOR Archive - to make Goa Schedule of Rates easily accessible to all.">
+    <title>About Us - Goa Construction Document Hub</title>
+    <meta name="description" content="Learn about the mission of the Goa Construction Document Hub - to provide easy access to a wide range of construction-related documents for Goa and beyond.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
@@ -12,9 +20,13 @@
     <header>
         <div class="container">
             <div class="logo">
-                <h1><a href="index.html">Goa SOR Archive</a></h1>
+                <h1><a href="index.html">Goa Construction Hub</a></h1>
+                <p>Your Central Resource for Construction Documents</p>
             </div>
-            <nav>
+            <button class="nav-toggle" aria-label="toggle navigation" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
+            <nav id="primary-navigation">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html" class="active">About Us</a></li>
@@ -27,26 +39,28 @@
     <main>
         <div class="container content-page">
             <section>
-                <h2>About Us</h2>
+                <h2>Our Mission</h2>
                 <p>
-                    Welcome to the Goa SOR Archive! Our mission is simple: <strong>to make the Goa Schedule of Rates (SOR) for civil, electrical, and plumbing works easily accessible to everyone.</strong>
+                    Welcome to the Goa Construction Document Hub! Our mission is to create a comprehensive, user-friendly, and centralized platform for accessing a wide array of essential construction-related documents.
                 </p>
                 <p>
-                    We understand that finding these crucial documents online can often be a frustrating and time-consuming task. The SORs are vital for engineers, architects, contractors, quantity surveyors, students, and even the general public undertaking construction or renovation projects in Goa.
-                </p>
-                <p>
-                    This website was created as a public service to centralize these documents, providing a user-friendly platform where you can:
+                    We understand the challenges professionals, students, and the public face in finding scattered and often hard-to-access technical and regulatory information. This Hub aims to simplify that process by providing:
                 </p>
                 <ul>
-                    <li>Quickly search for specific SOR items or documents.</li>
-                    <li>Filter documents by year and category (Civil, Electrical, Plumbing).</li>
-                    <li>Download the required SOR documents with a single click.</li>
+                    <li>Goa Schedule of Rates (SOR) for various works and years.</li>
+                    <li>Goa Building Rules, Regulations, and Development Control guidelines.</li>
+                    <li>CPWD Manuals, Specifications, and relevant circulars.</li>
+                    <li>Standard Construction Specifications.</li>
+                    <li>Other official notifications, circulars, and PDFs pertinent to infrastructure, engineering, and construction in Goa and nationally relevant documents.</li>
                 </ul>
                 <p>
-                    We believe that easy access to information empowers professionals and promotes transparency. We strive to keep this archive updated with the latest available SORs and welcome any contributions or suggestions to improve this resource.
+                    Our goal is to empower engineers, architects, contractors, quantity surveyors, students, researchers, and the general public by making these vital documents readily available for search, filtering, and download. We believe that easy access to information fosters better practices, transparency, and knowledge sharing within the construction sector.
                 </p>
                 <p>
-                    Thank you for using the Goa SOR Archive!
+                    This platform is a community-driven effort, and we continuously strive to expand and update our collection. We welcome contributions, suggestions, and feedback to make this resource as valuable as possible.
+                </p>
+                <p>
+                    Thank you for using the Goa Construction Document Hub!
                 </p>
             </section>
         </div>
@@ -54,11 +68,15 @@
 
     <footer>
         <div class="container">
-            <p>© <span id="currentYear"></span> Goa SOR Archive. All Rights Reserved. Not an official government website.</p>
+            <p>© <span id="currentYear"></span> Goa Construction Hub. All Rights Reserved. This is not an official government website.</p>
         </div>
     </footer>
     <script>
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        // For current year in footer on non-homepage pages
+        if (document.getElementById('currentYear')) {
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+        }
     </script>
+    <script src="js/app.js"></script> {/* Include app.js for mobile nav toggle on all pages */}
 </body>
 </html>

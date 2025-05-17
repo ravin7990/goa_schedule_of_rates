@@ -3,8 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Goa SOR Archive</title>
-    <meta name="description" content="Get in touch with the Goa SOR Archive for queries, suggestions, or contributions regarding Goa Schedule of Rates.">
+    <title>Contact Us - Goa Construction Document Hub</title>
+    <meta name="description" content="Get in touch with the Goa Construction Document Hub for queries, suggestions, or contributions.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
@@ -12,9 +20,13 @@
     <header>
         <div class="container">
             <div class="logo">
-                <h1><a href="index.html">Goa SOR Archive</a></h1>
+                <h1><a href="index.html">Goa Construction Hub</a></h1>
+                <p>Your Central Resource for Construction Documents</p>
             </div>
-            <nav>
+            <button class="nav-toggle" aria-label="toggle navigation" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
+            <nav id="primary-navigation">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
@@ -29,21 +41,20 @@
             <section>
                 <h2>Contact Us</h2>
                 <p>
-                    We'd love to hear from you! Whether you have a question, a suggestion to improve the website, or want to contribute an SOR document we might be missing, please feel free to reach out.
+                    We'd love to hear from you! Whether you have a question, a suggestion to improve the website, or want to contribute a document we might be missing, please feel free to reach out.
                 </p>
 
                 <div class="contact-options">
                     <h3>Email Us:</h3>
                     <p>
                         For general inquiries, suggestions, or contributions, please email us at:
-                        <a href="mailto:info@examplegoasor.com">info@examplegoasor.com</a> (Replace with your actual email)
+                        <a href="mailto:info@examplegoaconstructionhub.com">info@examplegoaconstructionhub.com</a> 
                     </p>
                     <p>
                         We aim to respond to all queries within 2-3 business days.
                     </p>
 
-                    {/* Optional: Contact Form - Requires backend or service like Formspree */}
-                    <!--
+                  
                     <h3>Send us a Message:</h3>
                     <form id="contactForm" action="YOUR_FORMSPREE_ENDPOINT" method="POST">
                         <div class="form-group">
@@ -62,9 +73,9 @@
                             <label for="message">Message:</label>
                             <textarea id="message" name="message" rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="btn">Send Message</button>
+                        <button type="submit" class="btn">Send Message <i class="fas fa-paper-plane"></i></button>
                     </form>
-                    -->
+                   
                 </div>
             </section>
         </div>
@@ -72,11 +83,15 @@
 
     <footer>
         <div class="container">
-            <p>© <span id="currentYear"></span> Goa SOR Archive. All Rights Reserved. Not an official government website.</p>
+            <p>© <span id="currentYear"></span> Goa Construction Hub. All Rights Reserved. This is not an official government website.</p>
         </div>
     </footer>
     <script>
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        // For current year in footer on non-homepage pages
+        if (document.getElementById('currentYear')) {
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+        }
     </script>
+    <script src="js/app.js"></script> 
 </body>
 </html>
