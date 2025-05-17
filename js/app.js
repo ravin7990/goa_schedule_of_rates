@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- DATA: SOR Documents ---
     const sorData = [
         // Ensure filenames are correct and point to your 'documents' folder
-        { id: 1, title: 'Goa PWD SOR - Civil Works 2021-22', year: 2021, category: 'Civil', filename: 'documents/test.pdf', keywords: 'building road bridge concrete', description: 'Comprehensive schedule for civil engineering projects, PWD Goa.' },
-        { id: 7, title: 'Goa PWD SOR - Plumbing Works 2021', year: 2021, category: 'Plumbing', filename: 'documents/placeholder_plumbing_2021.pdf', keywords: 'water supply sanitation pipeline', description: 'Latest plumbing rates for 2021.' },
+        { id: 1, title: 'Goa PWD SOR - Civil Works 2021-22', year: 2021, category: 'Civil', filename: 'docs/gsr_building_2019.pdf', keywords: 'building road bridge concrete', description: 'Comprehensive schedule for civil engineering projects, PWD Goa.' },
+        { id: 7, title: 'Goa PWD SOR - Plumbing Works 2021', year: 2021, category: 'Plumbing', filename: 'docs/gsr_building_2019.pdf', keywords: 'water supply sanitation pipeline', description: 'Latest plumbing rates for 2021.' },
     ];
 
     const sorTable = document.getElementById('sorTable');
