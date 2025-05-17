@@ -2,15 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- DATA: SOR Documents ---
     const sorData = [
         // Ensure filenames are correct and point to your 'documents' folder
-        { id: 1, title: 'Goa PWD SOR - Civil Works 2021-22', year: 2021, category: 'Civil', filename: 'documents/goa_sor_civil_2021.pdf', keywords: 'building road bridge concrete', description: 'Comprehensive schedule for civil engineering projects, PWD Goa.' },
-        { id: 2, title: 'Goa PWD SOR - Electrical Works 2021-22', year: 2021, category: 'Electrical', filename: 'documents/goa_sor_electrical_2021.pdf', keywords: 'wiring panel lighting fixture', description: 'Detailed rates for electrical installations and maintenance.' },
-        { id: 3, title: 'Goa PWD SOR - Plumbing & Sanitary Works 2018', year: 2018, category: 'Plumbing', filename: 'documents/goa_sor_plumbing_2018.pdf', keywords: 'pipe fitting fixture drainage', description: 'Schedule for plumbing, sanitary, and water supply works.' },
-        { id: 8, title: 'Goa PWD SOR - Civil Works  2023', year: 2023, category: 'Civil', filename: 'documents/building_gsr_2023.docx', keywords: 'building gsr', description: 'gsr for building works .' },
-        { id: 9, title: 'Goa PWD SOR - Civil Works  2023', year: 2023, category: 'Civil', filename: 'documents/building-gsr-2023.docx', keywords: 'building gsr', description: 'gsr for building works .' },
-
-        { id: 4, title: 'Goa PWD SOR - Civil Works 2019', year: 2019, category: 'Civil', filename: 'documents/gsr_building_2019.pdf', keywords: 'construction earthwork masonry', description: 'Civil works rates for the year 2019.' },
-        { id: 5, title: 'Goa PWD SOR - Electrical Works 2015', year: 2015, category: 'Electrical', filename: 'documents/placeholder_electrical_2015.pdf', keywords: 'cable switchgear transformer', description: 'Electrical schedule from 2015.' },
-        { id: 6, title: 'Goa PWD SOR - Civil Works (Roads & Bridges) 2019', year: 2019, category: 'Civil', filename: 'documents/placeholder_civil_roads_2019.pdf', keywords: 'highway culvert pavement', description: 'Specific SOR for roads and bridge construction.' },
+        { id: 1, title: 'Goa PWD SOR - Civil Works 2021-22', year: 2021, category: 'Civil', filename: 'documents/test.pdf', keywords: 'building road bridge concrete', description: 'Comprehensive schedule for civil engineering projects, PWD Goa.' },
         { id: 7, title: 'Goa PWD SOR - Plumbing Works 2021', year: 2021, category: 'Plumbing', filename: 'documents/placeholder_plumbing_2021.pdf', keywords: 'water supply sanitation pipeline', description: 'Latest plumbing rates for 2021.' },
     ];
 
