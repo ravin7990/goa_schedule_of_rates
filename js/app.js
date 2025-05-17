@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // - Use 'null' for 'year' if not applicable.
     const documentData = [
         // Goa SOR Examples
-        { id: 1, title: 'Goa PWD SOR - Civil Works 2023', year: 2023, category: 'Civil', documentType: 'SOR', filename: 'docs/building_gsr_2023.pdf', keywords: 'goa schedule rates building', description: 'Comprehensive schedule for civil engineering projects, PWD Goa.' },
-        { id: 2, title: 'Goa PWD SOR - Electrical Works 2023', year: 2023, category: 'Electrical', documentType: 'SOR', filename: 'docs/electrical_gsr_2023.pdf', keywords: 'pwd schedule rates wiring panel lighting fixture goa schedule rates electrical', description: 'Detailed rates for electrical installations and maintenance.' },
+        { id: 1, title: 'Goa PWD SOR - Civil Works 2023', year: 2023, category: 'Civil', documentType: 'SOR', filename: 'docs/building_gsr_2023.docx', keywords: 'goa schedule rates building', description: 'Comprehensive schedule for civil engineering projects, PWD Goa.' },
+        { id: 2, title: 'Goa PWD SOR - Electrical Works 2023', year: 2023, category: 'Electrical', documentType: 'SOR', filename: 'docs/electrical_gsr_2023.docx', keywords: 'pwd schedule rates wiring panel lighting fixture goa schedule rates electrical', description: 'Detailed rates for electrical installations and maintenance.' },
 
       /*  // Goa Building Rules Examples
         { id: 3, title: 'Goa Land Development & Building Construction Regulations 2010', year: 2010, category: 'Rules & Regulations', documentType: 'Building Rules', filename: 'docs/goa_building_rules_2010.pdf', keywords: 'tcp goa building bylaws development control regulations', description: 'Official building rules and regulations for Goa.' },
