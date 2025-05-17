@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Goa SOR Archive</title>
+    <meta name="description" content="Learn about the mission of Goa SOR Archive - to make Goa Schedule of Rates easily accessible to all.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><a href="index.html">Goa SOR Archive</a></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container content-page">
+            <section>
+                <h2>About Us</h2>
+                <p>
+                    Welcome to the Goa SOR Archive! Our mission is simple: <strong>to make the Goa Schedule of Rates (SOR) for civil, electrical, and plumbing works easily accessible to everyone.</strong>
+                </p>
+                <p>
+                    We understand that finding these crucial documents online can often be a frustrating and time-consuming task. The SORs are vital for engineers, architects, contractors, quantity surveyors, students, and even the general public undertaking construction or renovation projects in Goa.
+                </p>
+                <p>
+                    This website was created as a public service to centralize these documents, providing a user-friendly platform where you can:
+                </p>
+                <ul>
+                    <li>Quickly search for specific SOR items or documents.</li>
+                    <li>Filter documents by year and category (Civil, Electrical, Plumbing).</li>
+                    <li>Download the required SOR documents with a single click.</li>
+                </ul>
+                <p>
+                    We believe that easy access to information empowers professionals and promotes transparency. We strive to keep this archive updated with the latest available SORs and welcome any contributions or suggestions to improve this resource.
+                </p>
+                <p>
+                    Thank you for using the Goa SOR Archive!
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© <span id="currentYear"></span> Goa SOR Archive. All Rights Reserved. Not an official government website.</p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

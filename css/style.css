@@ -1,0 +1,551 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --primary-color: #0077B6; /* Professional Blue */
+    --secondary-color: #00B4D8; /* Lighter, vibrant blue */
+    --accent-color: #28a745; /* Green for download/success */
+    --accent-hover-color: #218838;
+    --background-color: #F4F7F6; /* Light off-white/grey */
+    --card-background: #FFFFFF;
+    --text-color: #333333;
+    --text-light: #555555;
+    --border-color: #DDE2E1;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --font-family: 'Poppins', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* --- Header --- */
+header {
+    background-color: var(--card-background);
+    padding: 1.2em 0;
+    box-shadow: 0 2px 10px var(--shadow-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header .logo h1 {
+    margin: 0;
+    font-size: 1.8em; /* Slightly reduced for better balance */
+    font-weight: 700;
+}
+header .logo h1 a {
+    color: var(--primary-color);
+}
+header .logo p {
+    font-size: 0.85em;
+    color: var(--text-light);
+    margin-top: -3px;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header nav ul li {
+    margin-left: 25px;
+}
+
+header nav ul li a {
+    color: var(--text-color);
+    font-weight: 500;
+    padding: 8px 0;
+    border-bottom: 3px solid transparent;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+/* --- Main Content Wrapper --- */
+.main-content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding-top: 40px; /* Increased padding */
+    padding-bottom: 40px;
+}
+
+.content-area {
+    flex: 3;
+    min-width: 0;
+}
+
+.sidebar {
+    flex: 1;
+    min-width: 290px;
+}
+
+/* --- Content Pages (About, Contact) --- */
+.content-page {
+    padding: 30px;
+    background-color: var(--card-background);
+    margin-top: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+.content-page h2 {
+    margin-bottom: 25px;
+    font-size: 2em;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+.content-page p, .content-page ul {
+    margin-bottom: 18px;
+    color: var(--text-light);
+}
+.content-page ul {
+    list-style-type: none; /* Remove default bullets */
+    padding-left: 0;
+}
+.content-page ul li {
+    padding-left: 25px;
+    position: relative;
+}
+.content-page ul li::before {
+    content: "\f058"; /* Font Awesome check icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+
+
+/* --- Filters Section --- */
+.filters-section {
+    background-color: var(--card-background);
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+.filters-section h2 {
+    margin-bottom: 20px;
+    font-size: 1.6em;
+}
+
+.filter-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.filter-controls input[type="text"],
+.filter-controls select {
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1em;
+    font-family: var(--font-family);
+    flex-grow: 1;
+    background-color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.filter-controls input[type="text"]::placeholder {
+    color: #aaa;
+}
+.filter-controls input[type="text"]:focus,
+.filter-controls select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.2); /* Focus ring */
+}
+.filter-controls input[type="text"] {
+    min-width: 250px;
+}
+.filter-controls select {
+    appearance: none; /* Remove default arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23333'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 1.2em;
+    padding-right: 40px; /* Space for custom arrow */
+}
+
+
+/* --- SOR List / Table (Card Based) --- */
+.sor-list-section {
+    /* No separate background, items will be cards */
+}
+.sor-list-section h2 {
+    margin-bottom: 25px;
+    font-size: 1.6em;
+}
+.sor-table {
+    display: grid;
+    gap: 25px; /* Spacing between cards */
+}
+
+.sor-item {
+    background-color: var(--card-background);
+    padding: 20px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0; /* For JS animation */
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.sor-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.sor-item-info {
+    flex-grow: 1;
+    padding-right: 20px; /* Space before download button */
+}
+
+.sor-item-info h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.25em; /* Slightly larger */
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.sor-item-meta {
+    font-size: 0.9em;
+    color: var(--text-light);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Space between meta items */
+}
+.sor-item-meta span {
+    display: flex; /* Align icon and text */
+    align-items: center;
+}
+.sor-item-meta i { /* For Font Awesome icons */
+    margin-right: 6px;
+    color: var(--secondary-color);
+}
+.sor-item-meta strong {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.download-button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    white-space: nowrap;
+    margin-top: 10px; /* Space if item wraps */
+    display: inline-flex; /* Align icon and text */
+    align-items: center;
+}
+.download-button i {
+    margin-right: 8px;
+}
+
+.download-button:hover {
+    background-color: var(--accent-hover-color);
+    transform: translateY(-2px);
+    color: white;
+}
+
+.no-results {
+    padding: 30px;
+    text-align: center;
+    color: var(--text-light);
+    font-style: italic;
+    font-size: 1.1em;
+    background-color: var(--card-background);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    opacity: 0; /* For JS animation */
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* --- Sidebar / Author Info --- */
+.author-info {
+    background-color: var(--card-background);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    text-align: center; /* Center content within author card */
+}
+.author-info h3 {
+    margin-bottom: 20px;
+    font-size: 1.4em;
+}
+.author-photo {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 20px auto;
+    border: 4px solid var(--secondary-color);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.author-info h4 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: var(--text-color);
+}
+.author-bio {
+    font-size: 0.9em;
+    color: var(--text-light);
+    margin-bottom: 20px;
+    text-align: left; /* Or justify if preferred */
+}
+.author-info p a {
+    display: inline-block; /* Better for centering or styling as button */
+    font-weight: 600;
+    padding: 8px 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+.author-info p a:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* --- Contact Form (if used) --- */
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-light);
+}
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1em;
+    font-family: var(--font-family);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.2);
+}
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+.btn { /* General button styling, can be used for form submit */
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    color: white;
+}
+.btn i {
+    margin-right: 8px;
+}
+
+
+/* --- Footer --- */
+footer {
+    background-color: #2C3E50; /* Darker, sophisticated blue/grey */
+    color: #BDC3C7; /* Light grey text for contrast */
+    text-align: center;
+    padding: 2em 0;
+    margin-top: auto;
+}
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+footer a {
+    color: #ECF0F1; /* Lighter link color for footer */
+}
+footer a:hover {
+    color: var(--secondary-color);
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-item { /* Class to be added by JS for staggered effect if desired */
+    animation: fadeIn 0.5s ease forwards;
+}
+
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    .filter-controls {
+        flex-direction: column; /* Stack filter controls */
+    }
+    .filter-controls input[type="text"],
+    .filter-controls select {
+        width: 100%;
+    }
+    .sor-table {
+        grid-template-columns: 1fr; /* Single column for cards on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 15px; /* Slightly smaller base font for mobile */
+    }
+    header .container {
+        flex-direction: column;
+        align-items: center; /* Center logo on mobile */
+    }
+    header .logo {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    header .logo p {
+        font-size: 0.8em;
+    }
+    header nav {
+        margin-top: 15px;
+        width: 100%;
+    }
+    header nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    header nav ul li {
+        margin-left: 0;
+        margin-bottom: 8px;
+        width: 100%;
+    }
+    header nav ul li a {
+        display: block;
+        padding: 12px;
+        background-color: #f8f9fa; /* Slightly different background for mobile nav items */
+        border-radius: 6px;
+        text-align: center;
+        border-bottom: none; /* Remove bottom border for mobile */
+    }
+    header nav ul li a.active, header nav ul li a:hover {
+        background-color: var(--secondary-color);
+        color: white;
+        border-bottom-color: transparent;
+    }
+
+    .main-content-wrapper {
+        flex-direction: column;
+    }
+    .sidebar {
+        /* order: -1; */ /* Optional: move sidebar above content */
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .sor-item {
+        flex-direction: column;
+        align-items: flex-start; /* Align content to start */
+        padding: 20px;
+    }
+    .sor-item-info {
+        padding-right: 0;
+        margin-bottom: 15px; /* Space between info and button */
+        width: 100%;
+    }
+    .download-button {
+        width: 100%;
+        text-align: center;
+        padding: 14px 20px; /* Larger tap target */
+    }
+    .content-page {
+        padding: 20px;
+    }
+    .content-page h2 {
+        font-size: 1.7em;
+    }
+}
