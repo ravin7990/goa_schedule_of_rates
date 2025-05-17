@@ -398,4 +398,15 @@ footer a:hover { color: var(--secondary-color); }
     .content-page h2 { font-size: 1.7em; }
     .intro-section { padding: 20px; }
     .intro-section h2 {font-size: 1.6em;}
+
+    .content-area {
+        order: 1; /* Content area comes first in the visual flow */
+    }
+
+    .sidebar {
+        order: 2; /* Sidebar comes second, effectively at the bottom */
+        width: 100%;
+        margin-top: 30px; /* Add some space above the sidebar when it's at the bottom */
+        margin-bottom: 30px; /* Keep bottom margin or adjust as needed */
+    }
 }
