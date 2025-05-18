@@ -6,24 +6,21 @@ document.addEventListener('DOMContentLoaded', function() {
     // - Use 'null' for 'year' if not applicable.
     const documentData = [
         // Goa SOR Examples
-        { id: 1, title: 'Goa PWD SOR - Civil Works 2023', year: 2023, category: 'Civil', documentType: 'SOR', filename: 'docs/building_gsr_2023.docx', keywords: 'goa schedule rates building', description: 'Comprehensive schedule for civil engineering projects, PWD Goa.' },
-        { id: 2, title: 'Goa PWD SOR - Electrical Works 2023', year: 2023, category: 'Electrical', documentType: 'SOR', filename: 'docs/electrical_gsr_2023.docx', keywords: 'pwd schedule rates wiring panel lighting fixture goa schedule rates electrical', description: 'Detailed rates for electrical installations and maintenance.' },
+        { id: 1, title: 'Goa PWD GSR - Civil Works 2023', year: 2023, category: 'Civil', documentType: 'GSR', filename: 'docs/building_gsr_2023.docx', keywords: 'goa schedule rates building, gsr 2023, gsr , 2023', description: 'Comprehensive schedule for civil engineering projects, PWD Goa.' },
+        { id: 2, title: 'Goa PWD GSR - Electrical Works 2023', year: 2023, category: 'Electrical', documentType: 'GSR', filename: 'docs/electrical_gsr_2023.docx', keywords: 'pwd schedule rates electrical, , gsr 2023 electrical , gsr , 2023', description: 'Detailed rates for electrical installations and maintenance.' },
+        { id: 3, title: 'Goa PWD GSR - Rods and Bridge 2023', year: 2023, category: 'Roads & Bridge', documentType: 'GSR', filename: 'docs/roads_bridgs_part_1_part_11_2023.docx', keywords: 'pwd schedule rates Roads & Bridge, , gsr 2023 Roads , gsr roads 2023 , 2023', description: 'Detailed rates for Roads Part-i and Bridges Part 1.' },
+        { id: 4, title: 'Goa PWD GSR - PHE Works 2023', year: 2023, category: 'Plumbing', documentType: 'GSR', filename: 'docs/phe_gsr_2023.docx', keywords: 'pwd schedule rates PHE works, , gsr 2023 Roads , gsr PHE 2023 , 2023', description: 'Detailed rates for PHE Works.' },
 
-      /*  // Goa Building Rules Examples
-        { id: 3, title: 'Goa Land Development & Building Construction Regulations 2010', year: 2010, category: 'Rules & Regulations', documentType: 'Building Rules', filename: 'docs/goa_building_rules_2010.pdf', keywords: 'tcp goa building bylaws development control regulations', description: 'Official building rules and regulations for Goa.' },
+        // GOA GSR 
+        
+        
+        
+        
+        
+        
+      /*  // Goa Building Rules Examples   roads_bridgs_part_1_part_11_2023  phe_gsr_2023
 
-        // CPWD Documents Examples
-        { id: 4, title: 'CPWD Specifications 2019 - Vol 1 (Civil)', year: 2019, category: 'Specifications', documentType: 'CPWD Docs', filename: 'docs/cpwd_specs_2019_vol1.pdf', keywords: 'cpwd central public works department specifications civil construction', description: 'CPWD general specifications for civil works, Volume 1.' },
-        { id: 5, title: 'CPWD Manual on Formwork', year: 2014, category: 'Manuals & Guidelines', documentType: 'CPWD Docs', filename: 'docs/cpwd_manual_formwork.pdf', keywords: 'cpwd formwork shuttering manual guidelines', description: 'CPWD guidelines and manual for formwork design and execution.' },
-
-        // Construction Specifications Examples
-        { id: 6, title: 'IS 456:2000 - Plain and Reinforced Concrete Code of Practice', year: 2000, category: 'Specifications', documentType: 'IS Codes', filename: 'docs/is_456_2000.pdf', keywords: 'is code indian standard concrete rcc design specifications', description: 'Bureau of Indian Standards code for plain and reinforced concrete.' },
-
-        // Other official PDFs Examples
-        { id: 7, title: 'Coastal Regulation Zone (CRZ) Notification 2019', year: 2019, category: 'Rules & Regulations', documentType: 'Notifications', filename: 'docs/crz_notification_2019.pdf', keywords: 'crz coastal regulation zone environment moefcc', description: 'Ministry of Environment, Forest and Climate Change CRZ Notification.' },
-        { id: 8, title: 'Test PDF Document', year: null, category: 'General', documentType: 'Test Document', filename: 'docs/test.pdf', keywords: 'sample example', description: 'A sample document for testing purposes.' },
-        { id: 9, title: 'Building GSR 2019 (PDF)', year: 2019, category: 'Civil', documentType: 'SOR', filename: 'docs/gsr_building_2019.pdf', keywords: 'gsr building rates', description: 'Goa Schedule of Rates for Building Works 2019.' },
-        { id: 10, title: 'Electrical GSR 2023 (DOCX)', year: 2023, category: 'Electrical', documentType: 'SOR', filename: 'docs/Electrical GSR - 2023.docx', keywords: 'electrical rates schedule', description: 'Electrical Schedule of Rates for 2023.' },
+        
 */
     ];
 
