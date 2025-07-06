@@ -11,11 +11,14 @@ document.addEventListener('DOMContentLoaded', function() {
         { id: 3, title: 'Goa PWD GSR - Rods and Bridge 2023', year: 2023, category: 'Roads & Bridge', documentType: 'GSR', filename: 'docs/roads_bridgs_part_1_part_11_2023.docx', keywords: 'pwd schedule rates Roads & Bridge, , gsr 2023 Roads , gsr roads 2023 , 2023', description: 'Detailed rates for Roads Part-i and Bridges Part 1.' },
         { id: 4, title: 'Goa PWD GSR - PHE Works 2023', year: 2023, category: 'Plumbing', documentType: 'GSR', filename: 'docs/phe_gsr_2023.docx', keywords: 'pwd schedule rates PHE works, , gsr 2023 Roads , gsr PHE 2023 , 2023', description: 'Detailed rates for PHE Works.' },
 
-        // rules
+        // rules    https://drive.google.com/file/d/1JzMcCSNa_QfoAbnVYLFrolbJXNpVWthg/view?usp=sharing
         { id: 5, title: 'National Building Code 2016', year: 2016, category: 'Rules & Regulations', documentType: 'Rules & Regulations', filename: 'https://drive.google.com/file/d/1MfcPoA1ZNN9DXTJxjMPPxblVILH1KRYp/view?usp=sharing', keywords: 'NBC, National building code, national building code 2016,NBC 2025,national building code 2025, ', description: 'National building code 2016 Part - 1.' },
         { id: 6, title: 'Plinth Area Rates 2023', year: 2023, category: 'Rules & Regulations', documentType: 'Rules & Regulations', filename: 'https://drive.google.com/file/d/1i_95bCGfaycAtGSYaf2_9cSGqgXrkSjb/view?usp=sharing', keywords: 'Plinth Area Rates 2023, Plinth Area Rates 2025, ', description: 'Plinth Area Rates 2023.' },
         { id: 7, title: 'Goa Building Regulations 2018', year: 2023, category: 'Rules & Regulations', documentType: 'Rules & Regulations', filename: 'docs/goa-building-construction-regulations-2010.pdf', keywords: 'Plinth Area Rates 2023, Plinth Area Rates 2025, ', description: 'The Goa Building Construction Regulations Amendments up to 2018.' },
-
+        { id: 8, title: 'IS 456 Plain and Reinforced Concrete', year: 2023, category: 'IS Codes', documentType: 'IS Codes', filename: 'https://drive.google.com/file/d/1xVWhEFk9I5gficTdbBYWRq-er7qlRXUF/view?usp=sharing', keywords: 'Is 456 plain and reinforced concrete pdf,Is 456 plain and reinforced concrete code, ', description: 'Is 456 plain and reinforced concrete code.' },
+        { id: 9, title: 'CPWD Works Manual 2024', year: 2024, category: 'Rules & Regulations', documentType: 'Rules & Regulations', filename: 'https://drive.google.com/file/d/1JzMcCSNa_QfoAbnVYLFrolbJXNpVWthg/view?usp=sharing', keywords: 'Cpwd works manual 2024 pdf  ', description: 'Cpwd works manual 2024 pdf free download.' },
+        { id: 10, title: 'Rate Analysis CPWD vol 1', year: 2021, category: 'Rules & Regulations', documentType: 'Rules & Regulations', filename: 'https://drive.google.com/file/d/10JBa99Pf1gtD8EUDXZe56O9OYYB2Bys_/view?usp=sharing', keywords: 'Rate Analysis cpwd vol 1', description: 'Rate Analysis cpwd vol 1.' },
+        { id: 11, title: 'Rate Analysis CPWD vol 2', year: 2021, category: 'Rules & Regulations', documentType: 'Rules & Regulations', filename: 'https://drive.google.com/file/d/1DKd6K7G3fTEQKIw_3iu-yrbzO7BW3t8p/view?usp=sharing', keywords: 'Rate Analysis cpwd vol 2', description: 'Rate Analysis cpwd vol 2.' },
         
         
         
