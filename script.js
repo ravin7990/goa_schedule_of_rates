@@ -6,7 +6,7 @@ const documents = [
     { year: '2022', category: 'civil', title: 'Goa SOR Civil Works 2022', type: 'PDF', size: '4.0 MB', link: 'docs/2022_civil.pdf' },
     { year: '2022', category: 'electrical', title: 'Goa SOR Electrical Works 2022', type: 'PDF', size: '3.6 MB', link: 'docs/2022_electrical.pdf' },
     { year: '2021', category: 'civil', title: 'Goa SOR Civil Works 2021', type: 'PDF', size: '3.9 MB', link: 'docs/2021_civil.pdf' },
-    // Add more documents as needed
+     { year: '2016', category: 'Fire', title: 'Part 4 Fire And Safety', type: 'PDF', size: '88 MB', link: 'https://mptownplan.gov.in/act%20&%20Rules/NationalBuilding%20Code%20Part-IV%20(Fire%20Safety).pdf' }
 ];
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -85,4 +85,5 @@ document.addEventListener('DOMContentLoaded', function() {
         categorySelect.value = 'all';
         filterAndDisplayDocuments();
     }
+
 });
