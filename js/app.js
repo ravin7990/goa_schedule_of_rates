@@ -21,7 +21,12 @@ document.addEventListener('DOMContentLoaded', function() {
         { id: 11, title: 'Rate Analysis CPWD vol 2', year: 2021, category: 'Rules & Regulations', documentType: 'Rules & Regulations', filename: 'https://drive.google.com/file/d/1DKd6K7G3fTEQKIw_3iu-yrbzO7BW3t8p/view?usp=sharing', keywords: 'Rate Analysis cpwd vol 2', description: 'Rate Analysis cpwd vol 2.' },
         
         
-        
+        //gsr 
+
+        { id: 12, title: 'Goa PWD GSR - Civil Works 2014', year: 2014, category: 'Civil', documentType: 'GSR', filename: 'docs/gsr_2014_road_gst.xls', keywords: 'gsr 2014', description: 'Comprehensive schedule for civil engineering projects, PWD Goa.' },
+
+          { id: 13, title: 'Goa PWD GSR - Civil Works 2015', year: 2015, category: 'Civil', documentType: 'GSR', filename: 'docs/gsr_2015_building.docx', keywords: 'gsr 2015', description: 'Comprehensive schedule for civil engineering projects, PWD Goa.' },
+          { id: 14, title: 'Goa PWD GSR - Civil Works 2015', year: 2015, category: 'Civil', documentType: 'GSR', filename: 'docs/gsr_2015_building_detail.rar', keywords: 'gsr 2015', description: 'Detail Rate Analysis for GSR 2015, PWD Goa.' }
         
         
       /*  // Goa Building Rules Examples   roads_bridgs_part_1_part_11_2023  phe_gsr_2023   
@@ -164,4 +169,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
         displayDocuments(documentData); // Display all documents initially
     }
+
 });
