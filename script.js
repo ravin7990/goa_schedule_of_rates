@@ -6,7 +6,7 @@ const documents = [
     { year: '2022', category: 'civil', title: 'Goa SOR Civil Works 2022', type: 'PDF', size: '4.0 MB', link: 'docs/2022_civil.pdf' },
     { year: '2022', category: 'electrical', title: 'Goa SOR Electrical Works 2022', type: 'PDF', size: '3.6 MB', link: 'docs/2022_electrical.pdf' },
     { year: '2021', category: 'civil', title: 'Goa SOR Civil Works 2021', type: 'PDF', size: '3.9 MB', link: 'docs/2021_civil.pdf' },
-
+    { year: '2025', category: 'civil', title: 'Goa SOR Civil Works 2025', type: 'PDF', size: '3.9 MB', link: '' },
     { year: '2014', category: 'civil', title: 'Goa SOR Civil Works 2014', type: 'xls', size: '3.9 MB', link: 'docs/gsr_2014_road_gst.xls' },
     { year: '2015', category: 'civil', title: 'Goa SOR Civil Works 2015', type: 'docx', size: '3.9 MB', link: 'docs/gsr_2015_building.docx' },
     { year: '2015', category: 'civil', title: 'Goa SOR Civil Works Detail 2015', type: 'rar', size: '3.9 MB', link: 'docs/gsr_2015_building_detail.rar' },
@@ -92,4 +92,5 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 });
+
 
