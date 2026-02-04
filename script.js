@@ -10,7 +10,7 @@ const documents = [
     { year: '2014', category: 'civil', title: 'Goa SOR Civil Works 2014', type: 'xls', size: '3.9 MB', link: 'docs/gsr_2014_road_gst.xls' },
     { year: '2015', category: 'civil', title: 'Goa SOR Civil Works 2015', type: 'docx', size: '3.9 MB', link: 'docs/gsr_2015_building.docx' },
     { year: '2015', category: 'civil', title: 'Goa SOR Civil Works Detail 2015', type: 'rar', size: '3.9 MB', link: 'docs/gsr_2015_building_detail.rar' },
-     { year: '2025', category: 'civil', title: 'Goa SOR Civil Works Detail 2025', type: 'rar', size: '3.9 MB', link: 'docs/' },
+     { year: '2025', category: 'civil', title: 'Goa SOR Civil Works Detail 2025', type: 'rar', size: '3.9 MB', link: 'docs/gsr_2025_update' },
      { year: '2016', category: 'Fire', title: 'Part 4 Fire And Safety', type: 'PDF', size: '88 MB', link: 'https://mptownplan.gov.in/act%20&%20Rules/NationalBuilding%20Code%20Part-IV%20(Fire%20Safety).pdf' }
 ];
 
@@ -92,6 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 });
+
 
 
 
