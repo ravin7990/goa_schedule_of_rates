@@ -28,7 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
           { id: 13, title: 'Goa PWD GSR - Civil Works 2015', year: 2015, category: 'Civil', documentType: 'GSR', filename: 'docs/gsr_2015_building.docx', keywords: 'gsr 2015', description: 'Comprehensive schedule for civil engineering projects, PWD Goa.' },
           { id: 14, title: 'Goa PWD GSR - Civil Works 2015', year: 2015, category: 'Civil', documentType: 'GSR', filename: 'docs/gsr_2015_building_detail.rar', keywords: 'gsr 2015', description: 'Detail Rate Analysis for GSR 2015, PWD Goa.' }
         
-        
+        { id: 15, title: 'Goa PWD GSR - Civil Works 2025', year: 2025, category: 'Civil', documentType: 'GSR', filename: '', keywords: 'gsr 2025', description: 'Detail Rate Analysis for GSR 2025, PWD Goa.' }
+
       /*  // Goa Building Rules Examples   roads_bridgs_part_1_part_11_2023  phe_gsr_2023   
 
        
@@ -171,3 +172,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 });
+
