@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { id: 12, title: 'Goa PWD GSR - Civil Works 2014', year: 2014, category: 'Civil', documentType: 'GSR', filename: 'docs/gsr_2014_road_gst.xls', keywords: 'gsr 2014', description: 'Comprehensive schedule for civil engineering projects, PWD Goa.' },
 
           { id: 13, title: 'Goa PWD GSR - Civil Works 2015', year: 2015, category: 'Civil', documentType: 'GSR', filename: 'docs/gsr_2015_building.docx', keywords: 'gsr 2015', description: 'Comprehensive schedule for civil engineering projects, PWD Goa.' },
-          { id: 14, title: 'Goa PWD GSR - Civil Works 2015', year: 2015, category: 'Civil', documentType: 'GSR', filename: 'docs/gsr_2015_building_detail.rar', keywords: 'gsr 2015', description: 'Detail Rate Analysis for GSR 2015, PWD Goa.' }
+          { id: 14, title: 'Goa PWD GSR - Civil Works 2015', year: 2015, category: 'Civil', documentType: 'GSR', filename: 'docs/gsr_2015_building_detail.rar', keywords: 'gsr 2015', description: 'Detail Rate Analysis for GSR 2015, PWD Goa.' },
         
         { id: 15, title: 'Goa PWD GSR - Civil Works 2025', year: 2025, category: 'Civil', documentType: 'GSR', filename: '', keywords: 'gsr 2025', description: 'Detail Rate Analysis for GSR 2025, PWD Goa.' }
 
@@ -172,4 +172,5 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 });
+
 
