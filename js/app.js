@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p class="document-item-meta">
                         ${item.year ? `<span><i class="fas fa-calendar-alt"></i><strong>Year:</strong> ${item.year}</span>` : ''}
                         <span><i class="fas fa-folder-open"></i><strong>Type:</strong> ${item.documentType}</span>
-                        <span><i class="fas fa="tags"></i><strong>Category:</strong> ${item.category}</span>
+                        <span><i class="fas fa-tags"></i><strong>Category:</strong> ${item.category}</span>
                     </p>
                     ${item.description ? `<p class="document-item-description">${item.description}</p>` : ''}
                 </div>
@@ -121,6 +121,23 @@ document.addEventListener('DOMContentLoaded', function() {
                     <i class="fas fa-download"></i> Download
                 </a>
             `;
+
+            // Track document download click
+            const downloadLink = docItemDiv.querySelector('.download-button');
+            if (downloadLink) {
+                downloadLink.addEventListener('click', () => {
+                    if (window.trackEvent) {
+                        window.trackEvent('home_doc_download', {
+                            doc_title: item.title,
+                            doc_year: item.year || 'N/A',
+                            doc_type: item.documentType,
+                            doc_category: item.category,
+                            filename: item.filename
+                        });
+                    }
+                });
+            }
+
             documentTableEl.appendChild(docItemDiv);
             // Trigger reflow for animation restart on each item
             docItemDiv.style.animation = 'none';
@@ -128,6 +145,8 @@ document.addEventListener('DOMContentLoaded', function() {
             docItemDiv.style.animation = null;
         });
     }
+
+    let searchAnalyticsTimer = null;
 
     function filterAndSearchDocuments() {
         if (!documentTableEl) return; // Only run if on homepage
@@ -159,19 +178,60 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- Event Listeners & Initial Load for Homepage Functionality ---
     if (document.getElementById('documentTable')) { // Check if we are on a page with the document table
-        if (searchInputEl) searchInputEl.addEventListener('input', filterAndSearchDocuments);
-        if (docTypeFilterEl) docTypeFilterEl.addEventListener('change', filterAndSearchDocuments);
-        if (yearFilterEl) yearFilterEl.addEventListener('change', filterAndSearchDocuments);
-        if (categoryFilterEl) categoryFilterEl.addEventListener('change', filterAndSearchDocuments);
+        if (searchInputEl) {
+            searchInputEl.addEventListener('input', () => {
+                filterAndSearchDocuments();
+                // Debounce search event tracking
+                clearTimeout(searchAnalyticsTimer);
+                searchAnalyticsTimer = setTimeout(() => {
+                    const term = searchInputEl.value.trim();
+                    if (term && window.trackEvent) {
+                        window.trackEvent('home_doc_search', {
+                            search_term: term
+                        });
+                    }
+                }, 600);
+            });
+        }
+
+        if (docTypeFilterEl) {
+            docTypeFilterEl.addEventListener('change', () => {
+                filterAndSearchDocuments();
+                if (docTypeFilterEl.value && window.trackEvent) {
+                    window.trackEvent('home_doc_filter', {
+                        filter_type: 'documentType',
+                        filter_value: docTypeFilterEl.value
+                    });
+                }
+            });
+        }
+
+        if (yearFilterEl) {
+            yearFilterEl.addEventListener('change', () => {
+                filterAndSearchDocuments();
+                if (yearFilterEl.value && window.trackEvent) {
+                    window.trackEvent('home_doc_filter', {
+                        filter_type: 'year',
+                        filter_value: yearFilterEl.value
+                    });
+                }
+            });
+        }
+
+        if (categoryFilterEl) {
+            categoryFilterEl.addEventListener('change', () => {
+                filterAndSearchDocuments();
+                if (categoryFilterEl.value && window.trackEvent) {
+                    window.trackEvent('home_doc_filter', {
+                        filter_type: 'category',
+                        filter_value: categoryFilterEl.value
+                    });
+                }
+            });
+        }
 
         populateFilter(docTypeFilterEl, 'documentType', 'Types');
         populateFilter(yearFilterEl, 'year', 'Years');
-        // Category filter is static in HTML, but could be dynamic: populateFilter(categoryFilterEl, 'category', 'Categories');
-
         displayDocuments(documentData); // Display all documents initially
     }
-
 });
-
-
-
