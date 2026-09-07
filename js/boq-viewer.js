@@ -66,9 +66,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // ── Header & Footer Setup ──
     if (currentYearEl) currentYearEl.textContent = new Date().getFullYear();
     if (navToggle && primaryNav) {
-        navToggle.addEventListener('click', () => {
+        navToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
             const isActive = primaryNav.classList.toggle('nav-active');
             navToggle.setAttribute('aria-expanded', isActive);
+        });
+
+        primaryNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                primaryNav.classList.remove('nav-active');
+                navToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!primaryNav.contains(e.target) && !navToggle.contains(e.target)) {
+                primaryNav.classList.remove('nav-active');
+                navToggle.setAttribute('aria-expanded', 'false');
+            }
         });
     }
 

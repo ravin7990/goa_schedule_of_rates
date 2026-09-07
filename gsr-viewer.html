@@ -999,13 +999,28 @@
 
             if (currentYearEl) currentYearEl.textContent = new Date().getFullYear();
 
-            // ── Mobile Nav Toggle ──
+            // ── Mobile Nav Toggle & Auto-close ──
             const navToggle = document.querySelector('.nav-toggle');
             const primaryNav = document.getElementById('primary-navigation');
             if (navToggle && primaryNav) {
-                navToggle.addEventListener('click', () => {
+                navToggle.addEventListener('click', (e) => {
+                    e.stopPropagation();
                     const isActive = primaryNav.classList.toggle('nav-active');
                     navToggle.setAttribute('aria-expanded', isActive);
+                });
+
+                primaryNav.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        primaryNav.classList.remove('nav-active');
+                        navToggle.setAttribute('aria-expanded', 'false');
+                    });
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (!primaryNav.contains(e.target) && !navToggle.contains(e.target)) {
+                        primaryNav.classList.remove('nav-active');
+                        navToggle.setAttribute('aria-expanded', 'false');
+                    }
                 });
             }
 

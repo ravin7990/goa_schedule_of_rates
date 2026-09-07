@@ -178,6 +178,41 @@ header nav#primary-navigation ul li a.active {
 .intro-section h2 { margin-bottom: 15px; font-size: 1.8em; }
 .intro-section p { color: var(--text-light); font-size: 1.05em; }
 
+/* Hero CTA Group on Homepage */
+.hero-cta-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+}
+.hero-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.95em;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    min-height: 46px;
+}
+.hero-cta-btn:hover {
+    color: white;
+    transform: translateY(-2px);
+}
+.hero-cta-gsr {
+    background: linear-gradient(135deg, #0077B6, #00B4D8);
+    box-shadow: 0 4px 14px rgba(0, 119, 182, 0.25);
+}
+.hero-cta-boq {
+    background: linear-gradient(135deg, #27AE60, #2ECC71);
+    box-shadow: 0 4px 14px rgba(39, 174, 96, 0.25);
+}
+
 
 /* Content Pages (About, Contact) */
 .content-page {
@@ -921,7 +956,15 @@ footer a:hover { color: var(--secondary-color); }
     transform: translateY(3px);
 }
 
-/* --- Responsive Design --- */
+/* --- Responsive Design & Mobile Optimization --- */
+
+/* Viewport and global mobile safeguards */
+html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+    -webkit-text-size-adjust: 100%;
+}
+
 @media (max-width: 992px) { /* Tablet and below */
     .filter-controls { flex-direction: column; }
     .filter-controls input[type="text"], .filter-controls select { width: 100%; }
@@ -936,38 +979,91 @@ footer a:hover { color: var(--secondary-color); }
     .gsr-result-count { margin-left: 0; text-align: center; }
 }
 
-@media (max-width: 768px) { /* Mobile */
+@media (max-width: 768px) { /* Mobile Phones & Small Tablets */
     body { font-size: 15px; }
-    header .container { flex-wrap: nowrap; /* Prevent logo from wrapping with toggle */ }
-    header .logo { flex-grow: 1; } /* Allow logo to take available space */
-    header .logo h1 { font-size: 1.5em; }
-    header .logo p { display: none; /* Hide subtitle on very small screens */ }
 
-    .nav-toggle { display: block; }
+    /* iOS Auto-zoom prevention on input focus */
+    input, select, textarea {
+        font-size: 16px !important;
+    }
+
+    /* Container adjustments */
+    .container {
+        width: 100%;
+        padding: 0 16px;
+    }
+
+    /* Header & Mobile Navigation */
+    header {
+        padding: 0.75em 0;
+    }
+    header .container {
+        flex-wrap: nowrap;
+    }
+    header .logo {
+        flex-grow: 1;
+        min-width: 0;
+    }
+    header .logo h1 {
+        font-size: 1.35em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    header .logo p {
+        display: none;
+    }
+
+    .nav-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 44px;
+        min-height: 44px;
+        padding: 10px;
+        margin-left: 10px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+    }
     .nav-toggle[aria-expanded="true"] .hamburger { transform: rotate(45deg); }
     .nav-toggle[aria-expanded="true"] .hamburger::before { opacity: 0; }
     .nav-toggle[aria-expanded="true"] .hamburger::after { transform: rotate(-90deg) translateX(6px); }
 
     header nav#primary-navigation {
-        display: block; /* Needed for JS toggle */
+        display: block;
         position: absolute;
-        top: 100%; /* Position below header */
+        top: 100%;
         left: 0;
         right: 0;
         background-color: var(--navbar-dark-bg);
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.25);
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.35s cubic-bezier(0.25, 0.1, 0.25, 1); /* Smoother transition */
-        width: 100%; /* Ensure it spans full width */
+        transition: max-height 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+        width: 100%;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
     }
-    header nav#primary-navigation.nav-active { max-height: calc(100vh - 60px); /* Adjust based on header height */ overflow-y: auto; }
-    header nav#primary-navigation ul { flex-direction: column; width: 100%; padding: 0.5em 0; }
-    header nav#primary-navigation ul li { margin-left: 0; width: 100%; text-align: left; }
+    header nav#primary-navigation.nav-active {
+        max-height: calc(100vh - 56px);
+        overflow-y: auto;
+    }
+    header nav#primary-navigation ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0.4em 0;
+    }
+    header nav#primary-navigation ul li {
+        margin-left: 0;
+        width: 100%;
+    }
     header nav#primary-navigation ul li a {
-        padding: 0.8em 1.5em; /* More padding */
+        padding: 0.9em 1.5em;
         border-bottom: 1px solid rgba(236, 240, 241, 0.08);
-        font-size: 1em;
+        font-size: 1.05em;
+        display: flex;
+        align-items: center;
+        min-height: 48px;
     }
     header nav#primary-navigation ul li:last-child a { border-bottom: none; }
     header nav#primary-navigation ul li a:hover,
@@ -977,38 +1073,393 @@ footer a:hover { color: var(--secondary-color); }
         border-bottom-color: transparent;
     }
 
-    .main-content-wrapper { flex-direction: column; padding-top: 20px; }
-    .sidebar { order: -1; width: 100%; margin-bottom: 30px; }
-    .document-item { flex-direction: column; align-items: stretch; }
-    .document-item-info { padding-right: 0; margin-bottom: 15px; }
-    .download-button { width: 100%; text-align: center; justify-content: center; padding: 12px 20px; }
-    .content-page { padding: 20px; margin-top: 20px; }
-    .content-page h2 { font-size: 1.7em; }
-    .intro-section { padding: 20px; }
-    .intro-section h2 {font-size: 1.6em;}
+    /* Homepage Content & Hero */
+    .main-content-wrapper { flex-direction: column; padding-top: 16px; padding-bottom: 24px; }
+    .content-area { order: 1; }
+    .sidebar { order: 2; width: 100%; margin-top: 25px; margin-bottom: 25px; }
 
-    .content-area {
-        order: 1; /* Content area comes first in the visual flow */
-    }
+    .intro-section { padding: 18px 16px; margin-bottom: 20px; }
+    .intro-section h2 { font-size: 1.45em; line-height: 1.3; }
+    .intro-section p { font-size: 0.95em; }
 
-    .sidebar {
-        order: 2; /* Sidebar comes second, effectively at the bottom */
+    .hero-cta-group {
+        flex-direction: column;
         width: 100%;
-        margin-top: 30px; /* Add some space above the sidebar when it's at the bottom */
-        margin-bottom: 30px; /* Keep bottom margin or adjust as needed */
+        gap: 10px;
+    }
+    .hero-cta-btn {
+        width: 100%;
+        padding: 14px 18px;
+        min-height: 48px;
+        font-size: 1em;
     }
 
-    /* GSR Viewer — Mobile */
-    .gsr-hero { padding: 25px 20px; }
-    .gsr-hero-content h2 { font-size: 1.5em; }
-    .gsr-stats { gap: 10px; }
-    .gsr-stat { padding: 10px 14px; }
-    .gsr-grid { grid-template-columns: 1fr; gap: 15px; }
-    .gsr-controls { padding: 16px 18px; }
-    .gsr-modal { border-radius: 14px; margin: 10px; }
-    .gsr-modal-details { grid-template-columns: 1fr; }
-    .gsr-modal-header { padding: 20px 20px 0; }
-    .gsr-modal h3 { padding: 10px 20px 0; font-size: 1.1em; }
-    .gsr-modal-body { padding: 14px 20px; }
-    .gsr-modal-footer { padding: 14px 20px 20px; }
+    .filters-section { padding: 18px 16px; margin-bottom: 20px; }
+    .filters-section h2 { font-size: 1.35em; }
+    .filter-controls input[type="text"],
+    .filter-controls select {
+        width: 100%;
+        min-height: 46px;
+        padding: 12px 16px;
+        border-radius: 8px;
+    }
+
+    .document-item {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 16px;
+        margin-bottom: 15px;
+        border-radius: 12px;
+    }
+    .document-item-info {
+        padding-right: 0;
+        margin-bottom: 14px;
+    }
+    .document-item-info h3 {
+        font-size: 1.1em;
+        line-height: 1.35;
+    }
+    .document-item-meta {
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 8px 0;
+    }
+    .download-button {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        min-height: 46px;
+        font-size: 0.95em;
+    }
+
+    /* GSR Viewer Mobile Optimization */
+    .gsr-hero {
+        padding: 20px 16px;
+        margin-bottom: 16px;
+        border-radius: 14px;
+    }
+    .gsr-hero-content h2 { font-size: 1.4em; }
+    .gsr-hero-content p { font-size: 0.9em; }
+
+    /* Horizontal scrollable source switcher (app-like tabs) */
+    .gsr-source-switcher {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding: 6px 2px 12px;
+        gap: 8px;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    .gsr-source-switcher::-webkit-scrollbar {
+        display: none;
+    }
+    .gsr-source-btn {
+        flex: 0 0 auto;
+        padding: 9px 16px;
+        font-size: 0.85em;
+        white-space: nowrap;
+        border-radius: 24px;
+        min-height: 40px;
+    }
+
+    /* Stats Grid */
+    .gsr-stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        width: 100%;
+        margin-top: 14px;
+    }
+    .gsr-stat {
+        padding: 10px 12px;
+        text-align: center;
+        justify-content: center;
+    }
+    .gsr-stat-number { font-size: 1.25em; }
+    .gsr-stat-label { font-size: 0.75em; }
+
+    /* Search & Filter Row */
+    .gsr-controls {
+        padding: 14px 16px;
+        margin-bottom: 16px;
+        border-radius: 12px;
+    }
+    .gsr-search-wrapper {
+        margin-bottom: 10px;
+    }
+    .gsr-controls input[type="text"] {
+        padding: 12px 42px 12px 40px;
+        min-height: 46px;
+    }
+    .gsr-filter-row {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+    .gsr-filter-row select {
+        width: 100%;
+        min-height: 46px;
+        padding: 10px 36px 10px 14px;
+    }
+    .gsr-result-count {
+        margin: 4px 0 0;
+        text-align: center;
+        font-size: 0.88em;
+    }
+
+    /* GSR Grid & Rate Cards */
+    .gsr-grid {
+        grid-template-columns: 1fr !important;
+        gap: 14px;
+        padding-bottom: 95px; /* Ensures floating estimate button never obscures cards */
+    }
+    .gsr-card {
+        border-radius: 12px;
+        margin-bottom: 4px;
+    }
+    .gsr-card-top {
+        padding: 14px 14px 8px;
+        padding-right: 52px; /* Space for add-to-estimate button */
+    }
+    .gsr-card-add-btn {
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        font-size: 1em;
+    }
+    .gsr-card-desc {
+        padding: 0 14px;
+        font-size: 0.9em;
+        line-height: 1.45;
+    }
+    .gsr-card-bottom {
+        padding: 12px 14px 14px;
+    }
+    .gsr-card-rate-num {
+        font-size: 1.25em;
+    }
+    .gsr-card-expand {
+        width: 42px;
+        height: 42px;
+    }
+
+    /* Floating Estimate Button on Mobile */
+    .gsr-floating-estimate-btn {
+        bottom: max(14px, env(safe-area-inset-bottom, 14px));
+        right: 14px;
+        left: 14px;
+        max-width: calc(100vw - 28px);
+        margin: 0 auto;
+        padding: 11px 18px;
+        justify-content: space-between;
+    }
+
+    /* Slide-over Estimate Drawer on Mobile */
+    .estimate-drawer {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        height: 100dvh !important;
+        box-shadow: none;
+    }
+    .estimate-drawer-header {
+        padding: 14px 16px;
+    }
+    .estimate-drawer-header h3 {
+        font-size: 1.15em;
+    }
+    .estimate-drawer-body {
+        padding: 12px 14px;
+    }
+    .estimate-item-card {
+        padding: 12px;
+        margin-bottom: 10px;
+    }
+    .estimate-item-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    .estimate-item-pricing {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .estimate-qty-ctrl {
+        gap: 4px;
+    }
+    .btn-qty {
+        width: 38px;
+        height: 38px;
+        font-size: 1.1em;
+    }
+    .estimate-qty-input {
+        width: 58px;
+        height: 38px;
+    }
+    .estimate-drawer-footer {
+        padding: 14px 16px max(18px, env(safe-area-inset-bottom, 18px));
+    }
+    .estimate-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .btn-estimate-excel,
+    .btn-estimate-pdf {
+        width: 100%;
+        min-height: 46px;
+        font-size: 0.95em;
+    }
+
+    /* Modals (GSR & BOQ) Mobile Optimization */
+    .gsr-modal-overlay {
+        padding: 0;
+        align-items: flex-end; /* Modern bottom-sheet feel */
+    }
+    .gsr-modal {
+        width: 100% !important;
+        max-width: 100% !important;
+        max-height: 92dvh !important;
+        margin: 0 !important;
+        border-radius: 20px 20px 0 0 !important;
+    }
+    .gsr-modal-header {
+        padding: 16px 16px 8px;
+    }
+    .gsr-modal h3 {
+        padding: 0 16px 6px;
+        font-size: 1.1em;
+    }
+    .gsr-modal-body {
+        padding: 12px 16px;
+        max-height: 55dvh;
+    }
+    .gsr-modal-details {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    .gsr-modal-footer {
+        padding: 12px 16px max(16px, env(safe-area-inset-bottom, 16px));
+    }
+    .gsr-modal-actions,
+    .boq-modal-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+    }
+    .gsr-btn-download-excel,
+    .gsr-btn-download-pdf,
+    .gsr-btn-add-estimate,
+    .boq-btn-download-excel,
+    .boq-btn-download-pdf,
+    .boq-btn-close-preview,
+    .gsr-btn-close-preview {
+        width: 100%;
+        min-height: 46px;
+        justify-content: center;
+        font-size: 0.95em;
+    }
+
+    /* BOQ Viewer Mobile Optimization */
+    .boq-upload-container {
+        padding: 24px 16px;
+        margin: 16px 0;
+        border-radius: 14px;
+    }
+    .boq-upload-icon {
+        font-size: 2.4em;
+        margin-bottom: 10px;
+    }
+    .boq-upload-text h3 {
+        font-size: 1.15em;
+    }
+    .boq-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+    .boq-actions > div {
+        flex-direction: column;
+        width: 100%;
+        gap: 8px !important;
+    }
+    .btn-reset,
+    #boqSheetSelect,
+    .btn-adjust-cols {
+        width: 100%;
+        justify-content: center;
+        min-height: 46px;
+    }
+    #boqGridColumns {
+        display: none !important; /* Hide desktop multi-column selector on mobile */
+    }
+    .boq-col-mapper {
+        padding: 14px;
+        border-radius: 12px;
+    }
+    .boq-col-mapper-grid {
+        grid-template-columns: 1fr !important;
+        gap: 10px;
+    }
+
+    /* Content Pages (About, Contact, Privacy) */
+    .content-page {
+        padding: 18px 16px;
+        margin-top: 16px;
+        border-radius: 12px;
+    }
+    .content-page h2 {
+        font-size: 1.45em;
+    }
+    .form-group {
+        margin-bottom: 16px;
+    }
+    .form-group label {
+        font-size: 0.92em;
+    }
+    .form-group input,
+    .form-group textarea {
+        padding: 12px 14px;
+        min-height: 46px;
+    }
+    .btn {
+        width: 100%;
+        min-height: 48px;
+        justify-content: center;
+        font-size: 1em;
+    }
+
+    /* Footer Mobile */
+    footer {
+        padding: 1.5em 0 max(1.5em, env(safe-area-inset-bottom, 1.5em));
+        font-size: 0.88em;
+    }
 }
+
+@media (max-width: 480px) { /* Extra Small Screens / Compact Phones */
+    .container {
+        padding: 0 12px;
+    }
+    header .logo h1 {
+        font-size: 1.25em;
+    }
+    .intro-section h2,
+    .content-page h2,
+    .gsr-hero-content h2 {
+        font-size: 1.3em;
+    }
+    .gsr-stats {
+        grid-template-columns: 1fr;
+    }
+    .gsr-card-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .gsr-card-bottom .gsr-card-expand {
+        align-self: flex-end;
+    }
+}
+
